@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {Route,Switch} from 'react-router-dom'
+import Layout from "./components/layout/Layout";
+// import MusicList from "./components/ui/Musiclist";
+// import Player from "./components/ui/player";
+import Search from "./components/ui/searchbox";
+import Home from "./pages/Home";
+import Featured from "./pages/Featured";
+import NewAlbums from "./pages/NewAlbums";
+import AlbumDetails from "./pages/AlbumDetails";
+import BottomNav from "./components/layout/BottomNav";
+import FeaturedDetails from "./pages/FeaturedDetails";
+import SongDetails from "./pages/SondDetails";
+import SearchResults from "./pages/Search";
+import {Search_data} from "./data/Searchdata"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Search/>
+      <Switch>
+        <Route path="/" exact>
+            <Home/>
+        </Route>
+        <Route path="/featured/list">
+            <Featured/>
+        </Route>
+        <Route path="/newalbums">
+            <NewAlbums/>
+        </Route>
+        <Route path="/album/:id/:name">
+            <AlbumDetails/>
+        </Route>
+        <Route path="/featured/:id/:name">
+            <FeaturedDetails/>
+        </Route>
+        <Route path="/song/:id/:name">
+            <SongDetails/>
+        </Route>
+        <Route path="/search">
+            <SearchResults/>
+        </Route>
+      </Switch>
+        <BottomNav />
+      {/* <Player/>  
+      <div>
+          <MusicList/>
+      </div> */}
+    </Layout>
   );
 }
 
