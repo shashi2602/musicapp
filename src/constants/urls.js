@@ -1,5 +1,5 @@
-export const HOME_SCREEN_CONTENT_URL="https://musicjiosaavnapi.herokuapp.com/home/";
-export const SEARCH="https://musicjiosaavnapi.herokuapp.com/search?query=";
-export const ALBUM_DETAILS="https://musicjiosaavnapi.herokuapp.com/album/?query=";
-export const SONG_DETAILS="https://musicjiosaavnapi.herokuapp.com/song/get/?lyrics=true&id=";
-export const PLAYLIST_DETAILS="https://musicjiosaavnapi.herokuapp.com/playlist/?query=";
+export const HOME_SCREEN_CONTENT_URL=process.env.REACT_APP_BASE_URL+"home/";
+export const SEARCH=process.env.REACT_APP_BASE_URL+"search?query=";
+export const ALBUM_DETAILS=process.env.REACT_APP_BASE_URL+"album/?query=";
+export const SONG_DETAILS=process.env.REACT_APP_BASE_URL+"song/get/?lyrics=true&id=";
+export const PLAYLIST_DETAILS=process.env.REACT_APP_BASE_URL+"playlist/?query=";

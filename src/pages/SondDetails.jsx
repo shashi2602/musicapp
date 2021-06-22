@@ -1,5 +1,5 @@
 import Loader from "../components/ui/loader";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import contentServ from "../services/ContentAPIRequests";
 function SongDetails(props) {
@@ -36,8 +36,11 @@ function SongDetails(props) {
             <div className="flex-auto ml-3 justify-start py-2">
               <div className="flex flex-wrap ">
                 <div className="w-full flex-none text-xs text-green-500 dark:text-green-200 font-medium ">
+                <Link to={`/album/${songdetails.albumid}/${songdetails.album}`}>
                   {songdetails.album}
+                  </Link>
                 </div>
+                
                 <h2 className="flex-auto text-black dark:text-white text-2xl md:text-4xl font-medium">
                   {songdetails.song}
                 </h2>
